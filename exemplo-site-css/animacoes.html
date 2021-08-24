@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações CSS</title>
+
+<style>
+    /* Regra de animação */
+    @keyframes troca-cores {
+        /* Exemplo 1 */
+        /* dê: */
+        /* from { color: black; } */
+
+        /* para: */
+        /* to { color: lightgreen; } */
+
+        /* Exemplo 2 */
+        0% { 
+            color: black; 
+            transform: translateX(0);
+        }
+        50% { 
+            color: red; 
+            transform: translateX(50px);
+        }
+        100% { 
+            color: blue; 
+            transform: translateX(0);
+        }
+    }
+
+    /* Aplicar a animação em algum seletor */
+    h1 {
+        /* display: inline-block; */
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        animation-name: troca-cores;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+
+    #banner {
+        background-color: lightblue;
+        border: solid 2px;
+        padding: 5px;
+        box-shadow: black 0 0 10px;
+        width: 700px;
+        margin: auto;
+
+        /* Escondendo partes de conteúdo (imagem)
+        que ultrapassarem os limites da div */
+        overflow: hidden;
+    }
+
+    @keyframes anima-imagem {
+        from { transform: translateX(0) rotateZ(0) /* scale(0.5) */; }
+        to { transform: translateX(580px) rotateZ(360deg) /* scale(1) */; }
+    }
+
+    #banner img {
+        animation-name: anima-imagem;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Animações usando CSS</h1>
+    <hr>
+    <div id="banner">
+        <img src="imagens/css3.png" alt="">
+    </div>
+</body>
+</html>

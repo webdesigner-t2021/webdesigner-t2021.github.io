@@ -1,0 +1,165 @@
+/* Todos os elementos/seletores usarão a regra abaixo */
+* { box-sizing: border-box; }
+
+body { 
+    /* background-color: lightgreen;  */
+    background-image: url(../imagens/noite.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Regra para a div container usando seletor ID */
+#container {
+    background-color: rgba(255, 255, 255, 0.801);
+    /* background-image: url(../imagens/tarde.jpg); */
+    /* background: linear-gradient(lightblue,rgba(144, 238, 144, 0.308));
+    background-size: cover;
+    background-attachment: fixed; */
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: white 0 0 100px;
+}
+
+/* Regra tornando as imagens responsivas/flexíveis */
+img { max-width: 100%; }
+
+
+/* Regra com seletor CLASSE */
+.centralizar { text-align: center; }
+.canto-arredondado { border-radius: 20px; }
+.sombra { box-shadow: black 2px 2px 5px; }
+
+
+/* Exercícios usando seletores TAG */
+
+/* 1) Crie uma regra para o elemento h1 com as seguintes configurações:
+
+-alinhamento centralizado
+-letras maiúsculas
+-plano de fundo cor escura
+-cor do texto clara
+-borda inferior de 5px, do estilo sólida e qualquer cor
+-borda superior de 5px, do estilo sólida e qualquer cor */
+h1 { 
+    text-align: center;
+    text-transform: uppercase;
+    background-color: darkblue;
+    color: white;
+    border-bottom: 5px solid;
+    border-top: 5px solid;
+}
+
+/* 2) Crie uma regra para o elemento h2 com as seguintes configurações: 
+-cor do texto (de sua preferência)
+-sombra no texto (de sua preferência)
+-alinhamento à direita
+-borda direita de 2px (estilo e qualquer cor)
+-espaçamento interno à direita de 5px */
+h2 {
+    color: red;
+    text-shadow: black 1px 1px 3px;
+    text-align: right;
+    border-right: solid 2px red;
+    padding: 5px;
+}
+
+
+/* 3) Crie uma regra para o elemento p com as seguintes configurações:
+-fonte Verdana (2a, 3a opção etc a sua escolha) 
+-tamanho da fonte de 18px 
+-altura de linha de 32px */
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+/* SELETOR DESCENDENTE */
+
+/* Itens pertencentes à listas ordenadas */
+ol li { text-transform: uppercase; }
+
+/* Itens pertencentes à listas não-ordenadas */
+ul li { list-style: square; }
+
+
+/* Links contidos nos parágrafos */
+
+/* Formatação do estado inicial do link */
+p a {
+    text-decoration: none;
+    color: yellow;
+    background-color: black;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Formatação de interação com o link 
+:hover -> pseudo-classe de passar o mouse
+:focus -> pseudo-classe de dar foco com teclado 
+
+Obs.: uso da vírgula indica um seletor agrupado */
+p a:hover, p a:focus {
+    background-color: #794503;
+    color: white;
+}
+
+/* Seletor adjacente (formata o p que vem logo
+depois do h3) */
+h3 + p { color: red; }
+
+/* 1a alternativa para alinhar os links 
+dentro do nav */
+nav { text-align: center; }
+
+/* Regras para links do menu */
+nav a { 
+    text-decoration: none; 
+    font-weight: bold;
+    background-color: darkblue;
+    color: white;
+    padding: 10px 30px;
+
+    display: inline-block;
+    width: 33.33%;
+}
+
+nav a:hover, nav a:focus {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.flutuar-esquerda { float: left; }
+.flutuar-direita { float: right; }
+
+
+figure {
+    margin: 0 auto;
+    box-shadow: black 0 0 5px;
+    max-width: 400px;
+
+    /* Contexto/Referência de posicionamento */
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 30px; 
+    background-color: rgba(0, 0, 0, 0.671);
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+
+ul { 
+    
+}
