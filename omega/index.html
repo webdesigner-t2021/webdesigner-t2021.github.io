@@ -4,10 +4,15 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ômega 2021</title>
+<title>Ômega - Agência Digital</title>
 <link rel="shortcut icon" href="imagens/favicon.png" type="image/png">
 
+
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
 <link rel="stylesheet" href="css/estilos.css">
+
 
 </head>
 <body id="topo">
@@ -32,16 +37,30 @@
     <!-- conteúdo -->
     <main>
         <!-- Destaque/Slider -->
-        <article>
-            <img src="imagens/mesa-de-trabalho.jpg" alt="Objetos de escritório em cima de uma mesa">
-            <h2>Ambiente Profissional</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, mollitia.</p>
+        <article class="slider">
+            <div>
+                <img src="imagens/mesa-de-trabalho.jpg" alt="Objetos de escritório em cima de uma mesa">
+                <h2>Ambiente Profissional</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, mollitia.</p>
+            </div>
+            <div>
+                <img src="imagens/tela-com-codigos.jpg" alt="Tela com pedaços de código">
+                <h2>Exemplos de código front-end</h2>
+                <p>Desenvolvimento de código front-end e back-end e etc bla bla bla</p>
+            </div>
+            <div>
+                <img src="imagens/bootstrap.jpg" alt="Logotipo do Bootstrap">
+                <h2>Principal biblioteca front-end</h2>
+                <p>Facilidade no desenvolvimento de interfaces web usando HTML, CSS e JS.</p>
+            </div>
         </article>
 
         <!-- O que fazemos -->
         <article id="o-que-fazemos">
             <h2>O que fazemos</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque magnam, nisi mollitia nihil, molestias ab recusandae tempora excepturi praesentium doloremque enim vero? Ratione mollitia, excepturi quae consequuntur eaque voluptates consectetur?</p>
+            <p>Dentre nossos serviços há uma série de coisas bacanas que fazemos, e você vai curtir pra caramba....</p>
+            <p>Nós também fazemo isso e isso e isso. 
+            E etc.</p>
 
             <div class="grupo">
                 <section>
@@ -117,7 +136,7 @@
                 <h3>Fale conosco</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, facilis?</p>                
 
-                <form action="#" method="post">
+    <form action="https://formspree.io/f/xzbyknjn" method="post" id="my-form">
                     <p>
                         <label for="nome">Nome:</label>
                         <input placeholder="Digite o nome completo"
@@ -144,7 +163,10 @@
                         <textarea required name="mensagem" id="mensagem" cols="40" rows="6"></textarea>
                     </p>
 
-                    <button type="submit" id="enviar" name="enviar">Enviar</button>
+            <button type="submit" id="my-form-button" name="enviar">Enviar</button>
+                
+            <p id="my-form-status"></p>
+ 
                 </form>
 
             </section>
@@ -178,5 +200,46 @@
         </aside>
         <p>Desenvolvido por <b>Tiago</b> &copy; 2021</p>
     </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: true, 
+        autoplaySpeed : 5000,
+        dots: true,
+        arrows: false
+    });
+});
+</script>
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Sua mensagem foi enviada com sucesso! Aguarde nosso retorno :)";
+        form.reset()
+      }).catch(error => {
+        status.innerHTML = "Vixi, deu ruim! Tente novamente mais tarde."
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+
+
+
+
 </body>
 </html>

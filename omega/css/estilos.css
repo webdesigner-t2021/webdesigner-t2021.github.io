@@ -9,8 +9,11 @@ html {
     scroll-behavior: smooth;
 }
 
+.slick-next { right: 15px; }
+
 body {
     background-image: url(../imagens/textura-fundo.png);
+    /* background-color: black; */
     background-attachment: fixed;
     font-family: 'Open Sans', Verdana, Arial, sans-serif;
 }
@@ -29,7 +32,7 @@ a {
 }
 
 header, footer {
-    background-color: rgba(0, 83, 139, 0.699);
+    background-color: rgba(177, 177, 177, 0.699);
     text-align: center;
 }
 
@@ -160,8 +163,6 @@ button:hover, button:focus {
 }
 
 /* #voltar-topo a::before { content: "▲"; } */
-
-
 
 
 /* Media Queries
